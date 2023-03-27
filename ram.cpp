@@ -2,7 +2,7 @@
 
 RAM::RAM(int num_blocks){
 	this->num_blocks = num_blocks;
-	this->blocks = new DataBlocks[this->num_blocks];
+	this->blocks = new DataBlocks(block_size)[this->num_blocks];
 }
 
 DataBlock* RAM::get_block(address addr){

@@ -6,8 +6,13 @@
 
 typedef (void)*cache_replacement_func(Cache*, DataBlock *, DataBlock *);
 
-void random(Cache *cache, DataBlock *arr, DataBlock *block_used);
+struct node{
+	DataBlock block;
+	node *next;
+};
 
-void fifo(Cache *cache, DataBlock *arr, DataBlock *block_used);
+void random(Cache *cache, node *arr, DataBlock *block_used);
 
-void lru(Cache *cache, DataBlock *arr, DataBlock *block_used);
+void fifo(Cache *cache, node *arr, DataBlock *block_used);
+
+void lru(Cache *cache, node *arr, DataBlock *block_used);

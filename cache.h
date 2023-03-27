@@ -11,7 +11,7 @@ public:
 	int num_sets;
 	int num_blocks;
 	int associativity;
-	DataBlock ** set_array;
+	node ** set_array;
 	cache_replacement_func *repl_func;
 	Cache(int n_sets, int n_blocks, std::string replacement_policy, int k);
 
