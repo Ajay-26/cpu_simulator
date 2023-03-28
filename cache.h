@@ -5,13 +5,14 @@
 #include "address.h"
 #include "datablock.h"
 #include "replacements.h"
+#include "smartlist.h"
 
 class Cache{
 public:
 	int num_sets;
 	int num_blocks;
 	int associativity;
-	node ** set_array;
+	SmartList<DataBlock*>* cache_arr; 
 	cache_replacement_func *repl_func;
 	Cache(int n_sets, int n_blocks, std::string replacement_policy, int k);
 
